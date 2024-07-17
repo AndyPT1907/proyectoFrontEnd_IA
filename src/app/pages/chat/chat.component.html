@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4 text-white">Subir Archivos</h2>
+
+  <!-- Input para subir imágenes -->
+  <div class="input-group mb-3">
+    <input type="file" class="form-control" (change)="onFileChanged($event)">
+  </div>
+
+  <div class="container mt-4">
+    <h2 class="text-center mb-4 text-white">Grabar Audio</h2>
+
+    <!-- Botón de grabación -->
+    <button (click)="toggleRecording()" class="btn-record">
+      <mat-icon>{{ isRecording ? 'stop' : 'mic' }}</mat-icon>
+      {{ isRecording ? 'Detener Grabación' : 'Iniciar Grabación' }}
+    </button>
+
+    <!-- Vista previa del audio grabado -->
+    <div *ngIf="audioUrl" class="mt-4">
+      <h3 class="text-center text-white">Vista Previa del Audio Grabado</h3>
+      <div class="card">
+        <audio #audio controls style="display: none;">
+          <source [src]="audioUrl" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+        <button (click)="playAudio(audio)" class="btn-play">Reproducir Audio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transcripción del audio -->
+  <div *ngIf="transcription" class="mt-4">
+    <h3 class="text-center text-white">Transcripción del Audio</h3>
+    <div class="card">
+      <p>{{ transcription }}</p>
+    </div>
+  </div>
+
+  <!-- Vista previa de la imagen seleccionada -->
+  <div *ngIf="imageUrl" class="mt-4">
+    <h3 class="text-center text-white">Vista Previa de la Imagen</h3>
+    <div class="card">
+      <img [src]="imageUrl" class="card-img-top" alt="Preview">
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <button>Verificar tipo de archivo</button>
+  </div>
+</div>

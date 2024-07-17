@@ -1,0 +1,37 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .btn-record {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btn-record mat-icon {
+    margin-right: 5px;
+  }
+  
+  .card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .card img {
+    max-width: 100%;
+  }
+  
